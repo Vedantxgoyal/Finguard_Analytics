@@ -1,0 +1,123 @@
+﻿ total_rows | fraud_rows | sample_fraud_rate_pct 
+------------+------------+-----------------------
+     858573 |       8213 |                0.9566
+(1 row)
+
+ type_name | total_transactions | fraud_transactions | fraud_rate_pct | total_fraud_amount 
+-----------+--------------------+--------------------+----------------+--------------------
+ TRANSFER  |              75380 |               4097 |         5.4351 |      6067213184.01
+ CASH_OUT  |             302979 |               4116 |         1.3585 |      5989202243.83
+ CASH_IN   |             187119 |                  0 |         0.0000 |                   
+ DEBIT     |               5356 |                  0 |         0.0000 |                   
+ PAYMENT   |             287739 |                  0 |         0.0000 |                   
+(5 rows)
+
+ type_name | amount_bucket | amount_bucket_sort_order | total_transactions | fraud_transactions | fraud_rate_pct |  total_amount  | fraud_amount  | avg_amount 
+-----------+---------------+--------------------------+--------------------+--------------------+----------------+----------------+---------------+------------
+ CASH_OUT  | 1M+           |                        5 |               1382 |               1345 |        97.3227 |  5238671712.53 | 5189909251.93 | 3790645.23
+ TRANSFER  | 0-1K          |                        1 |                 99 |                 21 |        21.2121 |       48471.31 |       7019.59 |     489.61
+ TRANSFER  | 1K-10K        |                        2 |                839 |                110 |        13.1108 |     4634642.52 |     593893.59 |    5524.01
+ TRANSFER  | 10K-100K      |                        3 |               8211 |                711 |         8.6591 |   447747166.15 |   35696586.86 |   54530.16
+ TRANSFER  | 1M+           |                        5 |              18951 |               1361 |         7.1817 | 49391511272.64 | 5270813057.02 | 2606274.67
+ TRANSFER  | 100K-1M       |                        4 |              47280 |               1894 |         4.0059 | 21221685956.46 |  760102626.95 |  448851.23
+ CASH_OUT  | 0-1K          |                        1 |               1001 |                 37 |         3.6963 |      492432.83 |       7019.59 |     491.94
+ CASH_OUT  | 1K-10K        |                        2 |               8939 |                110 |         1.2306 |    49062064.84 |     593893.59 |    5488.54
+ CASH_OUT  | 100K-1M       |                        4 |             197294 |               1906 |         0.9661 | 47413944906.47 |  762570439.85 |  240321.27
+ CASH_OUT  | 10K-100K      |                        3 |              94363 |                718 |         0.7609 |  5199088163.62 |   36121638.87 |   55096.68
+ PAYMENT   | 10K-100K      |                        3 |             137662 |                  0 |         0.0000 |  3032674364.97 |               |   22029.86
+ DEBIT     | 100K-1M       |                        4 |                 30 |                  0 |         0.0000 |     3935242.24 |               |  131174.74
+ DEBIT     | 0-1K          |                        1 |                850 |                  0 |         0.0000 |      442310.35 |               |     520.37
+ CASH_IN   | 0-1K          |                        1 |                611 |                  0 |         0.0000 |      300180.71 |               |     491.29
+ PAYMENT   | 100K-1M       |                        4 |                145 |                  0 |         0.0000 |    16502770.22 |               |  113812.21
+ DEBIT     | 1K-10K        |                        2 |               4031 |                  0 |         0.0000 |    15278611.14 |               |    3790.28
+ PAYMENT   | 1K-10K        |                        2 |             133440 |                  0 |         0.0000 |   698852022.68 |               |    5237.20
+ CASH_IN   | 100K-1M       |                        4 |             120154 |                  0 |         0.0000 | 28170664386.99 |               |  234454.65
+ PAYMENT   | 0-1K          |                        1 |              16492 |                  0 |         0.0000 |     8261526.54 |               |     500.94
+ CASH_IN   | 1K-10K        |                        2 |               5851 |                  0 |         0.0000 |    32825030.00 |               |    5610.16
+ CASH_IN   | 10K-100K      |                        3 |              60482 |                  0 |         0.0000 |  3335335334.04 |               |   55145.92
+ CASH_IN   | 1M+           |                        5 |                 21 |                  0 |         0.0000 |    25936964.89 |               | 1235093.57
+ DEBIT     | 10K-100K      |                        3 |                445 |                  0 |         0.0000 |     9738451.90 |               |   21884.16
+(23 rows)
+
+ total_flagged | false_positives | missed_fraud | total_actual_fraud | pct_fraud_missed_by_rule 
+---------------+-----------------+--------------+--------------------+--------------------------
+            16 |               0 |         8197 |               8213 |                    99.81
+(1 row)
+
+ account_id  | account_type | total_transactions | fraud_transactions | distinct_counterparties | total_amount_sent | active_step_span | avg_transactions_per_step 
+-------------+--------------+--------------------+--------------------+-------------------------+-------------------+------------------+---------------------------
+ C1237313447 | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C1439740840 | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C53057884   | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C1438388258 | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C7162498    | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C416779475  | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C351297720  | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C2050703310 | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C29118015   | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+ C1079335762 | CUSTOMER     |                  1 |                  1 |                       1 |       10000000.00 |                0 |                    1.0000
+(10 rows)
+
+ step | total_transactions | fraud_transactions | fraud_rate_pct 
+------+--------------------+--------------------+----------------
+   53 |                 10 |                 10 |       100.0000
+   50 |                  6 |                  6 |       100.0000
+   52 |                  8 |                  8 |       100.0000
+   31 |                 12 |                 12 |       100.0000
+   30 |                  8 |                  8 |       100.0000
+   28 |                  4 |                  4 |       100.0000
+   51 |                 14 |                 14 |       100.0000
+   32 |                 12 |                 12 |       100.0000
+   29 |                  4 |                  4 |       100.0000
+   54 |                  4 |                  4 |       100.0000
+(10 rows)
+
+ total_db_size 
+---------------
+ 491 MB
+(1 row)
+
+         table_name         | total_size 
+----------------------------+------------
+ dim_account                | 179 MB
+ fact_transactions          | 172 MB
+ mv_account_velocity        | 129 MB
+ mv_hourly_fraud_summary    | 184 kB
+ users                      | 128 kB
+ one_time_tokens            | 88 kB
+ refresh_tokens             | 64 kB
+ custom_oauth_providers     | 56 kB
+ mfa_factors                | 56 kB
+ sessions                   | 48 kB
+ objects                    | 48 kB
+ oauth_consents             | 48 kB
+ saml_relay_states          | 40 kB
+ flow_state                 | 40 kB
+ dim_transaction_type       | 40 kB
+ identities                 | 40 kB
+ oauth_authorizations       | 40 kB
+ migrations                 | 40 kB
+ mv_segment_fraud_rates     | 40 kB
+ webauthn_credentials       | 32 kB
+ webauthn_challenges        | 32 kB
+ sso_domains                | 32 kB
+ saml_providers             | 32 kB
+ sso_providers              | 32 kB
+ subscription               | 32 kB
+ secrets                    | 24 kB
+ schema_migrations          | 24 kB
+ mfa_amr_claims             | 24 kB
+ oauth_client_states        | 24 kB
+ oauth_clients              | 24 kB
+ audit_log_entries          | 24 kB
+ schema_migrations          | 24 kB
+ s3_multipart_uploads       | 24 kB
+ buckets_analytics          | 24 kB
+ buckets                    | 24 kB
+ mfa_challenges             | 24 kB
+ vector_indexes             | 24 kB
+ buckets_vectors            | 16 kB
+ s3_multipart_uploads_parts | 16 kB
+ instances                  | 16 kB
+(40 rows)
+

@@ -1,0 +1,26 @@
+# Next.js
+.next/
+out/
+build/
+
+# Dependencies
+node_modules/
+
+# Env files - never commit real values
+.env
+.env.local
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs
+npm-debug.log*
+.pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# Vercel
+.vercel

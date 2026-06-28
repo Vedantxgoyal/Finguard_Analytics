@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS variables mirror the Tailwind color tokens (tailwind.config.ts) —
+   recharts renders raw SVG and cannot resolve Tailwind utility classes,
+   so any chart fill/stroke color must come from here instead. Keeping
+   the hex values in sync with tailwind.config.ts is intentional
+   duplication: Tailwind config is JS-only context (build time), this is
+   runtime CSS — there's no single source both can read from without
+   adding a build step, so both are commented to point at each other. */
+:root {
+  --color-void: #0A0E14;
+  --color-raised: #11161F;
+  --color-raised-2: #161C28;
+  --color-hairline: #1F2733;
+  --color-text-primary: #E4E8EE;
+  --color-text-secondary: #9AA3B2;
+  --color-text-muted: #5C6678;
+  --color-fraud: #FF4757;
+  --color-fraud-dim: #7A2530;
+  --color-safe: #2ED9A3;
+  --color-safe-dim: #1A5C49;
+  --color-amber: #F0A640;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--color-void);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tabular figures everywhere by default — this is a finance dashboard;
+   columns of numbers must align vertically, which proportional numerals
+   (the font default) cannot guarantee even in a monospace face for
+   certain symbol glyphs (currency signs, commas). */
+body {
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Visible keyboard focus everywhere — required for a dense data
+   interface where keyboard navigation between filters/rows is a real
+   usage pattern, not an edge case. Never suppressed with outline: none
+   without a replacement. */
+:focus-visible {
+  outline: 2px solid var(--color-safe);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar — thin, dark, matches the terminal aesthetic instead
+   of the default light OS scrollbar clashing against a near-black page. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

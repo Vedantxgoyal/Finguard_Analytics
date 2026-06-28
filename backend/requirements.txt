@@ -1,0 +1,16 @@
+# FinGuard Analytics — backend dependencies
+#
+# Versions pinned exactly to what was tested throughout this project's
+# build (verified working against a live Supabase instance, not just
+# resolved by pip at write time). Pin exact versions, not ranges — this
+# is a deployed service, not a library; reproducible builds matter more
+# than always-latest here, and an untested transitive update breaking
+# asyncpg's wire protocol handling is a worse failure mode than being a
+# few patch versions behind.
+
+fastapi==0.138.1
+uvicorn[standard]==0.28.1
+sqlalchemy==2.0.51
+asyncpg==0.31.0
+pydantic==2.13.4
+python-dotenv==1.2.2
